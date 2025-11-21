@@ -1,0 +1,16 @@
+# Sensitive files that should NOT be public
+hardware-configuration.nix
+*sensitive*
+*secret*
+*private*
+*password*
+
+# Nix build artifacts
+result
+result-*
+*.qcow2
+*.vdi
+
+# Temporary files
+*.tmp
+*.swp
