@@ -1,16 +1,96 @@
-# Sensitive files that should NOT be public
+# Hardware-specific configurations (often contains partition UUIDs, filesystems)
 hardware-configuration.nix
-*sensitive*
+
+# Secrets and sensitive data
 *secret*
+*secrets*
+*sensitive*
 *private*
 *password*
+*token*
+*key*.pem
+*key*.asc
+*.age
+*.gpg
+*.key
+secrets/
+secrets.yaml
+secrets.nix
+age/
+sops/
+
+# SSH keys and certificates
+*.ssh/id_*
+*.ssh/*_rsa
+*.ssh/*_ed25519
+*.pem
+*.crt
+*.key
+*.p12
+*.pfx
+
+# Network and VPN configurations
+wireguard/
+*.conf
+*.ovpn
+vpn/
+
+# Personal credentials
+.authinfo
+.netrc
+.env
+.env.*
+credentials.json
+auth.json
 
 # Nix build artifacts
 result
 result-*
 *.qcow2
 *.vdi
+*.vmdk
+*.img
+*.iso
 
-# Temporary files
+# Nix-specific temporary files
+.direnv/
+.envrc
+flake.lock.backup
+
+# Editor and system temporary files
 *.tmp
 *.swp
+*.swo
+*~
+.*.sw?
+\#*\#
+.\#*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup
+*.old
+*~
+
+# Logs that might contain sensitive info
+*.log
+logs/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Personal notes (if you keep them in the repo)
+notes/
+TODO.md
+NOTES.md
+
+# Home-manager specific secrets
+home/secrets/
+.home-manager-secrets
