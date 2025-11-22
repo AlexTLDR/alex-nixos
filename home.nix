@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, zed-package, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -134,7 +134,7 @@
     ninja
     
     # Development Tools
-    zed-editor
+    zed-package  # Latest Zed from GitHub
     jetbrains-toolbox
     docker
     docker-compose
