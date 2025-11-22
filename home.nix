@@ -154,9 +154,21 @@
     dropbox
 
     # Proton suite
-    protonmail-bridge
+    protonmail-bridge-gui  # GUI application with system tray
     protonvpn-gui
   ];
+
+  # Create desktop entry for Proton Mail Bridge GUI
+  xdg.desktopEntries.protonmail-bridge = {
+    name = "Proton Mail Bridge";
+    genericName = "Email Bridge";
+    comment = "Proton Mail Bridge for desktop email clients";
+    exec = "protonmail-bridge-gui";
+    icon = "protonmail-bridge";
+    terminal = false;
+    categories = [ "Network" "Email" ];
+    type = "Application";
+  };
 
   # basic configuration of git, please change to your own
     programs.git = {
