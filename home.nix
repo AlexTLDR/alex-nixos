@@ -1,4 +1,4 @@
-{ config, pkgs, zed-package, ... }:
+{ config, pkgs, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -134,10 +134,13 @@
     ninja
     
     # Development Tools
-    zed-package  # Latest Zed from GitHub
+    zed-editor  # From nixpkgs-unstable
     jetbrains-toolbox
-    docker
-    docker-compose
+    podman-desktop  # Docker Desktop alternative with Kubernetes support
+    kubectl  # Kubernetes CLI
+    k9s  # Kubernetes TUI dashboard
+    kind  # Kubernetes in Docker - local clusters
+    helm  # Kubernetes package manager
     vscode
     gh #GitHub CLI
 

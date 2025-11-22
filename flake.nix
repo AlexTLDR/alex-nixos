@@ -12,14 +12,9 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Zed editor - latest version from GitHub
-    zed-editor = {
-      url = "github:zed-industries/zed";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, zed-editor, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       # use your own hostname instead of mine, nixos
       nixos = nixpkgs.lib.nixosSystem {
@@ -36,12 +31,6 @@
 
             # TODO replace alex with your own username
             home-manager.users.alex = import ./home.nix;
-
-            # Pass Zed package to home-manager
-            home-manager.extraSpecialArgs = {
-              zed-package = zed-editor.packages.x86_64-linux.default;
-            };
-
           }
         ];
       };

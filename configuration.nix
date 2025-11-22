@@ -103,8 +103,19 @@
     vim
     wget
     git
+    docker-compose
   ];
   environment.variables.EDITOR = "vim";
+
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+    autoPrune = {
+      enable = true;
+      dates = "weekly";
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
