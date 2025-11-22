@@ -134,7 +134,7 @@
     ninja
     
     # Development Tools
-    zed-editor  # From nixpkgs-unstable
+    zed-editor  
     jetbrains-toolbox
     podman-desktop  # Docker Desktop alternative with Kubernetes support
     kubectl  # Kubernetes CLI
@@ -153,12 +153,36 @@
     # AI coding assistant
     claude-code
     
-    # Music
+    # Music & Media
     spotify
+    vlc  # Media player
+    mpv  # Lightweight video player
+    ffmpeg  # Video/audio processing
 
     # Cloud storage
     dropbox
 
+    # Communication
+    discord
+    slack
+    zoom-us
+
+    # Screenshots & Screen Recording
+    flameshot  # Screenshot tool
+    obs-studio  # Screen recording/streaming
+    
+    # Document viewers
+    kdePackages.okular  # PDF viewer (KDE)
+    libreoffice-fresh  # Office suite
+    
+    # Image editing
+    gimp  # Photo editor
+    inkscape  # Vector graphics
+    
+    # System utilities
+    gparted  # Partition manager
+    htop  # Process viewer (alternative to btop)
+    
     # Proton suite
     protonmail-bridge-gui  # GUI application with system tray
     protonvpn-gui
