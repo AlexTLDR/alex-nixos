@@ -73,7 +73,7 @@
     gawk
     zstd
     gnupg
-    sublime
+    sublime-merge  # Git client by Sublime
 
     # fonts
     nerd-fonts.fira-code
@@ -149,6 +149,9 @@
 
     # AI coding assistant
     claude-code
+    
+    # Music
+    spotify
 
     # Cloud storage
     dropbox
