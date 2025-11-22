@@ -6,8 +6,9 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [ # Include the results of the hardware scan from backup location
+      # This keeps hardware-specific config out of version control
+      /etc/nixos.backup/hardware-configuration.nix
     ];
 
   # Bootloader.
