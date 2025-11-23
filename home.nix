@@ -239,6 +239,7 @@
 
       # Appearance
       background-opacity = 0.95;
+      theme = "Dracula";
     };
   };
 
