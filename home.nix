@@ -189,17 +189,19 @@
     protonvpn-gui
   ];
 
-  # Create desktop entry for Proton Mail Bridge GUI
-  xdg.desktopEntries.protonmail-bridge = {
-    name = "Proton Mail Bridge";
-    genericName = "Email Bridge";
-    comment = "Proton Mail Bridge for desktop email clients";
-    exec = "protonmail-bridge-gui";
-    icon = "protonmail-bridge";
-    terminal = false;
-    categories = [ "Network" "Email" ];
-    type = "Application";
-  };
+  # Create desktop entry for Proton Mail Bridge GUI with autostart
+  xdg.configFile."autostart/protonmail-bridge.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=Proton Mail Bridge
+    GenericName=Email Bridge
+    Comment=Proton Mail Bridge for desktop email clients
+    Exec=protonmail-bridge-gui --no-window
+    Icon=protonmail-bridge
+    Terminal=false
+    Categories=Network;Email;
+    X-KDE-autostart-after=panel
+  '';
 
   # basic configuration of git, please change to your own
     programs.git = {
