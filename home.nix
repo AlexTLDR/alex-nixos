@@ -148,9 +148,6 @@
     # Email
     thunderbird
 
-    # Gaming
-    steam
-
     # AI coding assistant
     claude-code
     
