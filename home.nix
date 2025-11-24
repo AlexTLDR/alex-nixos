@@ -161,7 +161,8 @@
     dropbox
 
     # Communication
-    discord
+    signal-desktop 
+    vesktop  # Discord client with Vencord built-in
     slack
     zoom-us
 
