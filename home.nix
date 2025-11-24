@@ -201,6 +201,20 @@
     X-KDE-autostart-after=panel
   '';
 
+  # JetBrains Toolbox autostart
+  xdg.configFile."autostart/jetbrains-toolbox.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=JetBrains Toolbox
+    GenericName=IDE Manager
+    Comment=Manage JetBrains IDEs
+    Exec=jetbrains-toolbox --minimize
+    Icon=jetbrains-toolbox
+    Terminal=false
+    Categories=Development;
+    X-KDE-autostart-after=panel
+  '';
+
   # basic configuration of git, please change to your own
     programs.git = {
     enable = true;
