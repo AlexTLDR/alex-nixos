@@ -101,6 +101,46 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+  # Enable dynamic linking for non-NixOS binaries (JetBrains Toolbox apps)
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    fuse3
+    icu
+    nss
+    nspr
+    expat
+    libdrm
+    mesa
+    libxkbcommon
+    xorg.libX11
+    xorg.libxcb
+    xorg.libXcomposite
+    xorg.libXdamage
+    xorg.libXext
+    xorg.libXfixes
+    xorg.libXi
+    xorg.libXrandr
+    xorg.libXrender
+    xorg.libXtst
+    xorg.libXScrnSaver
+    wayland
+    alsa-lib
+    at-spi2-atk
+    at-spi2-core
+    cairo
+    cups
+    dbus
+    fontconfig
+    freetype
+    gdk-pixbuf
+    glib
+    gtk3
+    pango
+  ];
+  
   # Flakes feature
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # List packages installed in system profile. To search, run:
