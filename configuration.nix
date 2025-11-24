@@ -102,6 +102,14 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   
+  # Install all nerd fonts system-wide
+  fonts.packages = with pkgs; [ 
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    jetbrains-mono
+    paratype-pt-sans
+  ];
+  
   # Enable dynamic linking for non-NixOS binaries (JetBrains Toolbox apps)
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

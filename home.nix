@@ -74,12 +74,9 @@
     gawk
     zstd
     gnupg
-    sublime-merge  # Git client by Sublime
 
     # fonts
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-    paratype-pt-sans  # PT Sans font for Typst
+    paratype-pt-sans  
     
     # browsers
     google-chrome
@@ -146,6 +143,7 @@
     helm  # Kubernetes package manager
     vscode
     gh #GitHub CLI
+    bluefish  # Web development editor
 
     # Email
     thunderbird
