@@ -79,6 +79,7 @@
     # fonts
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
+    paratype-pt-sans  # PT Sans font for Typst
     
     # browsers
     google-chrome
@@ -93,6 +94,7 @@
     # productivity
     hugo # static site generator
     glow # markdown previewer in terminal
+    typst # Modern markup-based typesetting system
 
     btop  # replacement of htop/nmon
     iotop # io monitoring
