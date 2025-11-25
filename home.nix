@@ -297,6 +297,7 @@
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
       nixos-rebuild-switch = "sudo nixos-rebuild switch --flake /home/alex/github.com/AlexTLDR/alex-nixos#nixos --impure";
       nixos-update = "(cd /home/alex/github.com/AlexTLDR/alex-nixos && nix flake update && sudo nixos-rebuild switch --flake /home/alex/github.com/AlexTLDR/alex-nixos#nixos --impure)";
+      nixos-check-updates = "(cd /home/alex/github.com/AlexTLDR/alex-nixos && nix flake lock --recreate-lock-file --print-build-logs 2>&1 | grep -E 'Updated|follows')";
     };
 
   };
