@@ -301,7 +301,7 @@
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
       nixos-rebuild-switch = "sudo nixos-rebuild switch --flake /home/alex/github.com/AlexTLDR/alex-nixos#nixos --impure";
       nixos-update = "(cd /home/alex/github.com/AlexTLDR/alex-nixos && nix flake update && sudo nixos-rebuild switch --flake /home/alex/github.com/AlexTLDR/alex-nixos#nixos --impure)";
-      nixos-check-updates = "(cd /home/alex/github.com/AlexTLDR/alex-nixos && nix flake update && sudo nixos-rebuild build --flake /home/alex/github.com/AlexTLDR/alex-nixos#nixos --impure && nvd diff /nix/var/nix/profiles/system ./result && git restore flake.lock)";
+      nixos-check-updates = "(cd /home/alex/github.com/AlexTLDR/alex-nixos && cp flake.lock flake.lock.bak && nix flake update && sudo nixos-rebuild build --flake /home/alex/github.com/AlexTLDR/alex-nixos#nixos --impure && nvd diff /run/current-system ./result && mv flake.lock.bak flake.lock && rm -f result)";
     };
 
   };
