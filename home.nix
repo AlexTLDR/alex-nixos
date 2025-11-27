@@ -1,5 +1,16 @@
 { config, pkgs, ... }:
 
+let
+  # Create a rustc wrapper that includes the source in the expected location
+  rust-with-src = pkgs.symlinkJoin {
+    name = "rust-with-src";
+    paths = [ pkgs.rustc ];
+    postBuild = ''
+      mkdir -p $out/lib/rustlib/src
+      ln -sf ${pkgs.rustPlatform.rustLibSrc} $out/lib/rustlib/src/rust
+    '';
+  };
+in
 {
   # TODO please change the username & home directory to your own
   home.username = "alex";
@@ -116,9 +127,14 @@
     gopls
     delve
     
-    rustc
+    rust-with-src  # Custom rustc with source in sysroot
     cargo
-    rust-analyzer
+    (pkgs.writeShellScriptBin "rust-analyzer" ''
+      # Override sysroot to use our custom rust-with-src
+      export RUST_SRC_PATH="${pkgs.rustPlatform.rustLibSrc}"
+      export RUSTC="${rust-with-src}/bin/rustc"
+      exec ${pkgs.rust-analyzer}/bin/rust-analyzer "$@"
+    '')
     rustfmt
     clippy
     rustPlatform.rustLibSrc  # Rust standard library source code
@@ -221,6 +237,9 @@
     X-KDE-autostart-after=panel
   '';
 
+  # Create a stable symlink for Rust source that rust-analyzer can use
+  home.file.".rust-src".source = pkgs.rustPlatform.rustLibSrc;
+
   # basic configuration of git, please change to your own
     programs.git = {
     enable = true;
@@ -312,6 +331,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
     VISUAL = "vim";
+    RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
   };
 
   # This value determines the home Manager release that your
