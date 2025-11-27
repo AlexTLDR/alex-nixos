@@ -179,6 +179,9 @@
     gimp  # Photo editor
     inkscape  # Vector graphics
     
+    # KDE utilities
+    kdePackages.kcalc  # KDE calculator
+    
     # System utilities
     gparted  # Partition manager
     htop  # Process viewer (alternative to btop)
