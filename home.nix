@@ -120,6 +120,8 @@
     cargo
     rust-analyzer
     rustfmt
+    clippy
+    rustPlatform.rustLibSrc  # Rust standard library source code
     
     nodejs_22
     nodePackages.typescript
